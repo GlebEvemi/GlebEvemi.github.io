@@ -45,7 +45,7 @@
       </div>
     </div>
 
-    
+
     <audio data-key="65" src="sounds/clap.wav"></audio>
     <audio data-key="83" src="sounds/hihat.wav"></audio>
     <audio data-key="68" src="sounds/kick.wav"></audio>
@@ -55,3 +55,36 @@
     <audio data-key="74" src="sounds/snare.wav"></audio>
     <audio data-key="75" src="sounds/tom.wav"></audio>
     <audio data-key="76" src="sounds/tink.wav"></audio>
+
+
+    <script src="jquery.js"></script>
+<script>
+
+$(document).ready(function() {
+    // Отслеживаем события "Нажатие на клавишу"
+    $(this).keydown(function(event) {
+        // Создаем переменную, в которую помещаем div с подходящим data-key
+        var key = $(this).find('.key[data-key='+event.which+']');
+        // Находим на странице тег audio с нужным data-key
+        var audio = $(this).find('audio[data-key='+event.which+']')[0];
+        // Добавляем активный класс к клавише, чтобы подсветить ее
+        key.toggleClass('playing');
+        // Проверяем существует ли audio тег с таким data-key
+        if (!audio) return;
+        // Воспроизводим звук
+        audio.play();
+        // Сбрасываем таймер звуковой дорожки на 0
+        audio.currentTime = 0;
+    });
+
+    // Отслеживаем событие, когда пользователь отпускает кнопку
+    $(this).keyup(function(event) {
+        // Снова создаем переменную с нужным data-key
+        var key = $(this).find('.key[data-key='+event.which+']');
+        // Убираем класс, который подсвечивает кнопку
+        key.toggleClass('playing');
+    });
+});
+</script>
+</body>
+</html>
