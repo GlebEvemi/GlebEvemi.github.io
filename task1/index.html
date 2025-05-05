@@ -5,7 +5,6 @@
   <title>jQuery Drum Kit</title>
   <link rel="stylesheet" href="style.css">
   <script src="jquery.js"></script>
-  <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script>
 // Как всегда, проберим готовность документа
 $(function() {
@@ -77,6 +76,15 @@ $(this).keyup(function(event) {
       <kbd>L</kbd>
       <span class="sound">tink</span>
     </div>
+    <div data-key="186" class="key">
+      <kbd>;</kbd>
+      <span class="sound">pop</span>
+    </div>
+    <div data-key="222" class="key">
+      <kbd>'</kbd>
+      <span class="sound">sharp pop</span>
+    </div>
+
   </div>
 
   <audio data-key="65" src="sounds/clap.wav"></audio>
@@ -88,6 +96,9 @@ $(this).keyup(function(event) {
   <audio data-key="74" src="sounds/snare.wav"></audio>
   <audio data-key="75" src="sounds/tom.wav"></audio>
   <audio data-key="76" src="sounds/tink.wav"></audio>
+  <audio data-key="186" src = "sounds/pop-94319.mp3"></audio>
+  <audio data-key="222" src="sounds/sharp-pop-328170.mp3"></audio>
+
 
 </body>
 </html>
