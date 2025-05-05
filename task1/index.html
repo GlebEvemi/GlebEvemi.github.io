@@ -5,35 +5,7 @@
   <title>jQuery Drum Kit</title>
   <link rel="stylesheet" href="style.css">
   <script src="jquery.js"></script>
-<script>
-// Как всегда, проберим готовность документа
-$(function() {
-    // Оттаблицаем события "Нажатие на клавишу"
-    $(this).keydown(function(event) {
-    // Создаем переменную, в которую помещаем div с подходящим data-key
-    var key = $(this).find('.key[data-key='+event.which+']');
-    // Находим на странице тез audio с нужным data-key и помещаем также в переменную для удобства
-    var audio = $(this).find('audio[data-key='+event.which+']')[0];
-    // Присадиваем активный класс к клавише, чтобы подсветить ее
-    key.toggleClass('playing');
-    // Проверяем существует ли audio тез с таким data-key
-    if (!audio) return;
-    // Воспроизводим звук
-    audio.play();
-    // Сбрасываем таймер звуковой дорожки снова на 0
-    audio.currentTime = 0;
-});
-
-// Отслеживаем событие, когда пользователь отпускает кнопку
-$(this).keyup(function(event) {
-    // Снова создаем переменную с нужным data-key
-    var key = $(this).find('.key[data-key='+event.which+']');
-    // Убираем класс, который подсвечивает кнопку
-    key.toggleClass('playing');
-    });
-});
-
-</script>
+  <script src="script.js"></script>
 </head>
 
 
@@ -76,12 +48,12 @@ $(this).keyup(function(event) {
       <kbd>L</kbd>
       <span class="sound">tink</span>
     </div>
-    <div data-key="186" class="key">
-      <kbd>;</kbd>
+    <div data-key="90" class="key">
+      <kbd>Z</kbd>
       <span class="sound">pop</span>
     </div>
-    <div data-key="222" class="key">
-      <kbd>'</kbd>
+    <div data-key="88" class="key">
+      <kbd>X</kbd>
       <span class="sound">sharp pop</span>
     </div>
 
@@ -96,8 +68,8 @@ $(this).keyup(function(event) {
   <audio data-key="74" src="sounds/snare.wav"></audio>
   <audio data-key="75" src="sounds/tom.wav"></audio>
   <audio data-key="76" src="sounds/tink.wav"></audio>
-  <audio data-key="186" src = "sounds/pop-94319.mp3"></audio>
-  <audio data-key="222" src="sounds/sharp-pop-328170.mp3"></audio>
+  <audio data-key="90" src = "sounds/pop-94319.mp3"></audio>
+  <audio data-key="88" src="sounds/sharp-pop-328170.mp3"></audio>
 
 
 </body>
