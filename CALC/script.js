@@ -17,7 +17,8 @@ const inputEur = document.querySelector('#eur'),
                 inputUsd.value = (+inputEur.value * data.current.usd).toFixed(2);
                 inputRub.value = (+inputEur.value * data.current.rub).toFixed(2);
             } else {
-                inputRubvalue, inputUsd.value = "Что-то пошло не так";
+                inputUsd.value = "Что-то пошло не так";
+                inputRub.value = "-";
             }
         });
     });
