@@ -4,11 +4,11 @@ $(function() {
     $(this).keydown(function(event) {
     // Создаем переменную, в которую помещаем div с подходящим data-key
     var key = $(this).find('.key[data-key='+event.which+']');
-    // Находим на странице тез audio с нужным data-key и помещаем также в переменную для удобства
+    // Находим на странице тег audio с нужным data-key и помещаем также в переменную для удобства
     var audio = $(this).find('audio[data-key='+event.which+']')[0];
     // Присадиваем активный класс к клавише, чтобы подсветить ее
     key.toggleClass('playing');
-    // Проверяем существует ли audio тез с таким data-key
+    // Проверяем существует ли audio тег с таким data-key
     if (!audio) return;
     // Воспроизводим звук
     audio.play();

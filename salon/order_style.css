@@ -1,0 +1,36 @@
+body {
+    font-family: Arial;
+    background: #f9f9f9;
+    padding: 40px;
+}
+
+.order-box {
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.back {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.total {
+    margin-top: 15px;
+    font-weight: bold;
+}
