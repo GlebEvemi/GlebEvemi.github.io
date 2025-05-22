@@ -2,7 +2,7 @@ import { closeModal, openModal } from "./modal";
 import { postData } from "../services/services"
 
 function forms(formsSelector, modalTimerId) {
-    const forms = document.querySelectorAll('formsSelector');
+    const forms = document.querySelectorAll(formsSelector);
     const message = {
         loading: 'img/form/spinner.svg',
         success: 'Спасибо! Скоро мы с вами свяжемся',
@@ -45,15 +45,15 @@ function forms(formsSelector, modalTimerId) {
     }
 
     function showThanksModal(message) {
-        const prevModalDialog = document.querySelector('.modal_dialog');
+        const prevModalDialog = document.querySelector('.modal__dialog');
         prevModalDialog.classList.add('hide');
         openModal('.modal', modalTimerId);
         const thanksModal = document.createElement('div');
-        thanksModal.classList.add('modal_dialog');
+        thanksModal.classList.add('modal__dialog');
         thanksModal.innerHTML =
-            `<div class="modal_content">
-        <div class="modal_close" data-close></div>
-        <div class="modal_title">${message}</div>
+            `<div class="modal__content">
+        <div class="modal__close" data-close></div>
+        <div class="modal__title">${message}</div>
     </div>
     `;
         document.querySelector('.modal').append(thanksModal);

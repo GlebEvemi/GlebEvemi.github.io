@@ -10,21 +10,21 @@ import { openModal } from './modules/modal';
 window.addEventListener('DOMContentLoaded', function() {
     const modalTimerId = setTimeout(() => openModal('.modal', modalTimerId), 50000);
 
-    tabs('.tabheader__item', '.tabcontent', '.tabheader__items', 'tabheader__item_active');
+    tabs('.tabheader__item', '.tabcontent', '.tabheader__items', '.tabheader__item_active');
     modal('[data-modal]', '.modal', modalTimerId);
-    timer('.timer', '2021-10-31');
+    timer('.timer', '2026-10-11');
     cards();
     calc();
     forms('form', modalTimerId);
     slider({
-        container: '.offer_slider',
-        slide: '.offer_slide',
-        nextArrow: '.offer_slider-next',
-        prevArrow: '.offer_slider-prev',
+        container: '.offer__slider',
+        slide: '.offer__slide',
+        nextArrow: '.offer__slider-next',
+        prevArrow: '.offer__slider-prev',
         totalCounter: '#total',
         currentCounter: '#current',
-        wrapper: '.offer_slider-wrapper',
-        field: '.offer_slider-inner'
+        wrapper: '.offer__slider-wrapper',
+        field: '.offer__slider-inner'
 
     });
 
