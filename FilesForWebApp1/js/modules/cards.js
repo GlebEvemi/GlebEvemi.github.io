@@ -1,5 +1,5 @@
 import { getResource } from '../services/services'
-import data from '../db.json';
+
 
 function cards() {
     class MenuCard {
@@ -42,9 +42,13 @@ function cards() {
     }
 
 
-    data.forEach(({ img, altimg, title, descr, price }) => {
-        new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
-    });
+    fetch('db.json')
+        .then(response => response.json())
+        .then(data => {
+            data.menu.forEach(({ img, altimg, title, descr, price }) => {
+                new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
+            });
+        })
 
 }
 
